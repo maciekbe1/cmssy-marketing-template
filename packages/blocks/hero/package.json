@@ -1,0 +1,113 @@
+{
+  "name": "@cmssy/blocks.hero",
+  "version": "1.0.0",
+  "description": "Hero section with gradient background, badge, heading, CTA buttons, and social proof",
+  "author": {
+    "name": "Cmssy Team",
+    "email": "hello@cmssy.com",
+    "url": "https://cmssy.com"
+  },
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "node ../../../scripts/build-block.js ."
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "cmssy": {
+    "packageType": "block",
+    "displayName": "Hero Section",
+    "category": "marketing",
+    "tags": ["hero", "landing", "cta", "gradient", "marketing"],
+    "preview": {
+      "icon": "Sparkles",
+      "demo": "https://demo.cmssy.io/blocks/hero"
+    },
+    "pricing": {
+      "licenseType": "free"
+    },
+    "schemaFields": [
+      {
+        "key": "badgeText",
+        "type": "string",
+        "label": "Badge Text",
+        "placeholder": "AI-Powered Page Builder",
+        "helperText": "Small badge above the heading"
+      },
+      {
+        "key": "heading",
+        "type": "text",
+        "label": "Main Heading",
+        "required": true,
+        "placeholder": "Build websites",
+        "helperText": "First line of the heading"
+      },
+      {
+        "key": "headingHighlight",
+        "type": "string",
+        "label": "Heading Highlight",
+        "placeholder": "without limits",
+        "helperText": "Second line with gradient effect"
+      },
+      {
+        "key": "subheading",
+        "type": "text",
+        "label": "Subheading",
+        "placeholder": "The modern CMS that makes website creation effortless...",
+        "helperText": "Description text below the heading"
+      },
+      {
+        "key": "primaryButtonText",
+        "type": "string",
+        "label": "Primary Button Text",
+        "placeholder": "Start Building Free"
+      },
+      {
+        "key": "primaryButtonUrl",
+        "type": "link",
+        "label": "Primary Button URL",
+        "placeholder": "/signup"
+      },
+      {
+        "key": "secondaryButtonText",
+        "type": "string",
+        "label": "Secondary Button Text",
+        "placeholder": "Watch Demo"
+      },
+      {
+        "key": "secondaryButtonUrl",
+        "type": "link",
+        "label": "Secondary Button URL",
+        "placeholder": "#demo"
+      },
+      {
+        "key": "socialProofCount",
+        "type": "string",
+        "label": "Social Proof Count",
+        "placeholder": "2,000+",
+        "helperText": "Number of users/customers"
+      },
+      {
+        "key": "socialProofText",
+        "type": "string",
+        "label": "Social Proof Text",
+        "placeholder": "creators already building with cmssy",
+        "helperText": "Text after the count"
+      }
+    ],
+    "defaultContent": {
+      "badgeText": "AI-Powered Page Builder",
+      "heading": "Build websites",
+      "headingHighlight": "without limits",
+      "subheading": "The modern CMS that makes website creation effortless. Drag, drop, and let AI do the heavy lifting. No coding required.",
+      "primaryButtonText": "Start Building Free",
+      "primaryButtonUrl": "/signup",
+      "secondaryButtonText": "Watch Demo",
+      "secondaryButtonUrl": "#demo",
+      "socialProofCount": "2,000+",
+      "socialProofText": "creators already building with cmssy"
+    }
+  }
+}
