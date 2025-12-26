@@ -1,6 +1,6 @@
 {
   "name": "@cmssy/blocks.hero",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Hero section with gradient background, badge, heading, CTA buttons, and social proof",
   "author": {
     "name": "Cmssy Team",

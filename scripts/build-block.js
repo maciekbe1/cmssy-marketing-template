@@ -41,14 +41,15 @@ const buildBlock = async () => {
   }
 
   try {
-    // Build JS bundle (ESM format)
+    // Build JS bundle (ESM format, fully bundled without externals)
     await esbuild.build({
       entryPoints: [entryPoint],
       bundle: true,
       format: 'esm',
       outfile: resolve(distPath, 'index.js'),
-      external: ['react', 'react-dom'],
-      jsx: 'automatic',
+      // Don't externalize React - bundle it completely for now (MVP)
+      // In production, we'll use import maps for better caching
+      jsx: 'transform', // Use transform instead of automatic to avoid jsx-runtime imports
       minify: true,
       sourcemap: true,
       target: 'es2020',

@@ -1,8 +1,11 @@
 {
   "version": 2,
   "public": true,
+  "framework": null,
   "buildCommand": "pnpm build",
   "outputDirectory": "public",
+  "cleanUrls": false,
+  "trailingSlash": false,
   "headers": [
     {
       "source": "/(.*)",
