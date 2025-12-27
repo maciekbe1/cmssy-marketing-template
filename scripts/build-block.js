@@ -1,10 +1,7 @@
 #!/usr/bin/env node
 import esbuild from 'esbuild';
-import { resolve, dirname } from 'path';
+import { resolve } from 'path';
 import { existsSync } from 'fs';
-import { fileURLToPath } from 'url';
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
 
 /**
  * Build a single block package to ESM bundle.

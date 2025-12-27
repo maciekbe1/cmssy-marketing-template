@@ -6,7 +6,11 @@
   "scripts": {
     "build": "node scripts/build-all.js && node scripts/prepare-cdn.js",
     "build:block": "node scripts/build-block.js",
-    "prepare-cdn": "node scripts/prepare-cdn.js"
+    "prepare-cdn": "node scripts/prepare-cdn.js",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
+    "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
+    "type-check": "tsc --noEmit",
+    "check": "pnpm lint && pnpm type-check"
   },
   "keywords": [
     "cmssy",
@@ -17,7 +21,15 @@
   "author": "Cmssy Team",
   "license": "MIT",
   "devDependencies": {
-    "esbuild": "^0.19.0"
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@typescript-eslint/eslint-plugin": "^8.50.1",
+    "@typescript-eslint/parser": "^8.50.1",
+    "esbuild": "^0.19.0",
+    "eslint": "^9.39.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "typescript": "^5.9.3"
   },
   "engines": {
     "node": ">=18.0.0",

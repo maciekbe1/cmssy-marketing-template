@@ -11,6 +11,7 @@ interface HeroContent {
   secondaryButtonUrl?: string;
   socialProofCount?: string;
   socialProofText?: string;
+  media?: string;
 }
 
 export default function HeroBlock({ content }: { content: HeroContent }) {
@@ -24,8 +25,12 @@ export default function HeroBlock({ content }: { content: HeroContent }) {
     secondaryButtonText = "Watch Demo",
     secondaryButtonUrl = "#demo",
     socialProofCount = "2,000+",
-    socialProofText = "creators already building with cmssy"
+    socialProofText = "creators already building with cmssy",
+    media = ""
   } = content;
+
+  // Detect if media is a video (by file extension)
+  const isVideo = media && (media.endsWith('.mp4') || media.endsWith('.webm') || media.endsWith('.ogg'));
 
   return (
     <section className="cmssy-hero-section relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -124,21 +129,44 @@ export default function HeroBlock({ content }: { content: HeroContent }) {
         <div className="mt-20 relative">
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10 pointer-events-none" />
           <div className="relative rounded-xl border shadow-2xl shadow-violet-500/10 overflow-hidden bg-background">
-            <div className="aspect-video bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 flex items-center justify-center">
-              <div className="text-center p-8">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-500 to-purple-600 mx-auto mb-4 flex items-center justify-center">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-                  </svg>
-                </div>
-                <p className="text-lg font-medium text-muted-foreground">
-                  Page Builder Preview
-                </p>
-                <p className="text-sm text-muted-foreground/60">
-                  Drag & drop interface with real-time preview
-                </p>
+            {media ? (
+              <div className="aspect-video relative overflow-hidden">
+                {isVideo ? (
+                  <video
+                    src={media}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full h-full object-cover"
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+                ) : (
+                  <img
+                    src={media}
+                    alt={heading}
+                    className="w-full h-full object-cover"
+                  />
+                )}
               </div>
-            </div>
+            ) : (
+              <div className="aspect-video bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 flex items-center justify-center">
+                <div className="text-center p-8">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-500 to-purple-600 mx-auto mb-4 flex items-center justify-center">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                    </svg>
+                  </div>
+                  <p className="text-lg font-medium text-muted-foreground">
+                    Page Builder Preview
+                  </p>
+                  <p className="text-sm text-muted-foreground/60">
+                    Drag & drop interface with real-time preview
+                  </p>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

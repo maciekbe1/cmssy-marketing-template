@@ -1,7 +1,7 @@
 {
   "name": "@cmssy/blocks.hero",
-  "version": "1.0.1",
-  "description": "Hero section with gradient background, badge, heading, CTA buttons, and social proof",
+  "version": "1.1.0",
+  "description": "Hero section with gradient background, badge, heading, CTA buttons, social proof, and media preview",
   "author": {
     "name": "Cmssy Team",
     "email": "hello@cmssy.com",
@@ -95,6 +95,13 @@
         "label": "Social Proof Text",
         "placeholder": "creators already building with cmssy",
         "helperText": "Text after the count"
+      },
+      {
+        "key": "media",
+        "type": "image",
+        "label": "Hero Media",
+        "placeholder": "Upload image or video",
+        "helperText": "Image or video to display in the preview section. Supports image URLs and video URLs (MP4, WebM)"
       }
     ],
     "defaultContent": {
@@ -107,7 +114,8 @@
       "secondaryButtonText": "Watch Demo",
       "secondaryButtonUrl": "#demo",
       "socialProofCount": "2,000+",
-      "socialProofText": "creators already building with cmssy"
+      "socialProofText": "creators already building with cmssy",
+      "media": ""
     }
   }
 }
