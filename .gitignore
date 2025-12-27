@@ -7,3 +7,4 @@ public/
 .env.local
 .vercel
 .env*.local
+.mcp.json
